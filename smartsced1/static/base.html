@@ -1,0 +1,50 @@
+{% load static %}
+
+<!doctype html>
+<html lang="en">
+
+  <head>
+{% block header %}
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="../../../../favicon.ico">
+
+    <!--<title>{% block title %}Top navbar example for Bootstrap{% endblock %}</title>-->
+    <title>Top navbar example for Bootstrap</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="{% static "dist/css/bootstrap.min.css" %}" rel="stylesheet">
+    <link href="{% static "navbar-top.css" %} rel="stylesheet">
+{% endblock %}
+  </head>
+
+
+  <body>
+{%block body %}
+    {% block nevbar %}
+      <nav class="navbar navbar-expand-md navbar-dark bg-dark mb-4">
+         
+      </nav>
+    {% endblock %}
+
+    {% block con1 %}
+    {% endblock %}
+    {% block body1 %}
+    {% endblock %}
+    {% block footer %}
+
+      <!-- Bootstrap core JavaScript
+      ================================================== -->
+      <!-- Placed at the end of the document so the pages load faster -->
+      <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+      <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery-slim.min.js"><\/script>')</script>
+      <script src="{% static "assets/js/vendor/popper.min.js" %}"></script>
+      <script src="{% static "dist/js/bootstrap.min.js"%}"></script>
+    {% endblock %}
+{% endblock %}
+  </body>
+</html>
+
+{% endblock %}
