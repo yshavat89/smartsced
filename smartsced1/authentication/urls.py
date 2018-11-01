@@ -6,7 +6,8 @@ app_name = 'authentication' # namespacing: https://docs.djangoproject.com/en/2.0
 
 urlpatterns = [
     path('', views.LoginView.as_view(), name='login'),
-    path('sign-in/', views.SignInView.as_view(), name='sign-in'),
-    path('sign-out/', views.SignOutView.as_view(), name='sign-out'),
+    path('logoff/', views.logoffView.as_view(), name='logoff'),
+    path('sign-up/', views.SignUpView.as_view(), name='sign-up'),
+    
 
 ]
