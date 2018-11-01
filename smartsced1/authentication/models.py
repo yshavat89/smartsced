@@ -11,5 +11,11 @@ class User(AbstractUser,models.Model):
         (WORKER, 'Worker'),
     )
     group = models.CharField(max_length=2, choices=GROUP_CHOICES, default=WORKER)
-    test = models.CharField(max_length=2)
+    phone = models.CharField(max_length=10,null=True,default=None)
+    department = models.CharField(max_length=10,null=True,default='generic')
     #image = models.ImageField(upload_to='treasure_image', default='media/default.png')
+
+    def get_user_group(self):
+        for x in self.GROUP_CHOICES:
+            if self.group in x:
+                return x[1]
