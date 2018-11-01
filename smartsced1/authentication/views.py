@@ -1,6 +1,7 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.views.generic import View
 from django.views.generic import TemplateView
+from .forms import UserForm
 from django.contrib.auth.models import User
 from django.contrib.auth import authenticate, login
 
@@ -21,9 +22,11 @@ class LoginView(View):
 
         if user is not None:
             login(request, user)
-            return redirect('polls:question_add')
+            print("A")
+            return render(request,'authentication/success.html' ) # need to add gruop attribute 
         else:
-            return redirect('my_login:login')
+            print("B")
+            return redirect('authentication:login')
 
 class logoffView(View):
     pass

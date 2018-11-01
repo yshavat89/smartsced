@@ -11,7 +11,7 @@ https://docs.djangoproject.com/en/2.0/ref/settings/
 """
 
 #***************************************
-#   super-user  name : admin , password : Aa123456a , email : yshavat89@gmail.com
+#   super-user  name : yoni.admin , password : Aa123456a , email : yshavat89@gmail.com
 #   mysql name : admin ,password : root
 #   
 #
@@ -116,6 +116,8 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
+# custom User model
+AUTH_USER_MODEL = 'authentication.User'
 
 # Internationalization
 # https://docs.djangoproject.com/en/2.0/topics/i18n/
