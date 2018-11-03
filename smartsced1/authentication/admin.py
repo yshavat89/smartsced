@@ -23,7 +23,7 @@ class MyUserAdmin(UserAdmin):
 
     list_display = ('username','group','first_name', 'email')
     fieldsets = UserAdmin.fieldsets + (
-            (None, {'fields': ('group','department','phone',)}),
+            (None, {'fields': ('group','department','phone','image',)}),
     )
     
 
