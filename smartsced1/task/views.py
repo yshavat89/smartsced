@@ -25,5 +25,9 @@ class TaskFormView(LoginRequiredMixin, View):
 
         if form.is_valid():
             form.save(commit=True)
-        task_list = Task.objects.all()
+        task_list = Task.objects.all()[0:1]
+        t1 = task_list[0]
+        print(t1)
+        print(dir(t1))
+        print(t1.task_file)
         return render(request, 'task/index.html', {'task_list': task_list})
