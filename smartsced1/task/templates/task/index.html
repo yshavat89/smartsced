@@ -17,10 +17,10 @@
                         <div class="trasure panel panel-default">
                             <div class="panel-heading">
                                 <h2 class="panel-title">{{ task.name }}</h2>
+                                {{ task.owner }}{{ task.info }}
+
                             </div>
-                            <div class="treasure-photo">
-                               
-                            </div>
+                            <embed src="../../../media/{{ task.task_file }}" width="500" height="375">
                         </div>   
                     </div>       
                     <!--End Col-->
