@@ -21,6 +21,7 @@ class LoginView(View):
         user = authenticate(request, username=username, password=password)
 
         if user is not None:
+            request.session['member_id'] = username
             login(request, user)
             print(username)
             return render(request,user.get_user_group() + '/success.html' ) # need to add gruop attribute 

@@ -1,0 +1,125 @@
+[33mcommit b2254e795ee50615181c0d9dfb584481aaab896a[m[33m ([m[1;36mHEAD -> [m[1;32mbranch_No2[m[33m, [m[1;31morigin/branch_No2[m[33m, [m[1;31morigin/branch_No1[m[33m, [m[1;32mbranch_No1[m[33m)[m
+Author: yshavat89 <yshavat89@gmail.com>
+Date:   Wed Nov 7 11:51:27 2018 +0200
+
+    secces to render pdf file in task/template/index.html
+
+[33mcommit b079e4878e39ca5517456feefa73ab71e21e15d3[m
+Author: yshavat89 <yshavat89@gmail.com>
+Date:   Tue Nov 6 20:40:00 2018 +0200
+
+    .
+
+[33mcommit 1232b658ce2de1f54eab508970dcd92215493957[m
+Author: yshavat89 <yshavat89@gmail.com>
+Date:   Tue Nov 6 20:37:46 2018 +0200
+
+    some shite
+
+[33mcommit d6812e86496b117e3340fe5fcbc3fbfe85fd5feb[m
+Author: yonatan shavat <yshavat89@gmail.com>
+Date:   Tue Nov 6 20:30:20 2018 +0200
+
+    create task app
+
+[33mcommit a1b8b7f89ab309919e46a17e2c8651af20e53808[m
+Author: yonatan shavat <yshavat89@gmail.com>
+Date:   Mon Nov 5 17:46:39 2018 +0200
+
+    add requirements.txt
+
+[33mcommit b70bdf70fa479283dfdfadebb0fd436a2c2447e4[m
+Author: yonatan shavat <yshavat89@gmail.com>
+Date:   Mon Nov 5 15:46:10 2018 +0200
+
+    fix signup and upload image
+
+[33mcommit 2869db09dcaae43451cdc4d4dc17f79516f7306e[m
+Author: yonatan shavat <yshavat89@gmail.com>
+Date:   Sat Nov 3 12:55:55 2018 +0200
+
+    fix user image before creating all software objects
+
+[33mcommit 513c93b7fc41561c3915e5cddc722726820d2894[m
+Author: yonatan shavat <yshavat89@gmail.com>
+Date:   Thu Nov 1 16:38:50 2018 +0200
+
+    create first home page to any type of user
+
+[33mcommit 73b30cf98f1a52dc52c2b7abeff0c177df34832d[m
+Author: yonatan shavat <yshavat89@gmail.com>
+Date:   Thu Nov 1 14:05:35 2018 +0200
+
+    fix auth.admin.py
+
+[33mcommit bb6a14097642d17d88bfcab0ff1344cf0394149e[m
+Author: yonatan shavat <yshavat89@gmail.com>
+Date:   Thu Nov 1 14:03:10 2018 +0200
+
+    .
+
+[33mcommit 8ecfe3596f79d5b90a46418da1b8c1f0847b6bbc[m
+Author: yonatan shavat <yshavat89@gmail.com>
+Date:   Thu Nov 1 14:02:38 2018 +0200
+
+    .
+
+[33mcommit 4f10e22dfb939590abb89c2aa56ffb918ff67e0e[m
+Author: yonatan shavat <yshavat89@gmail.com>
+Date:   Thu Nov 1 14:02:19 2018 +0200
+
+    after creating custom user
+
+[33mcommit 0fd7bb88af0c6129515493f50f481346c5536975[m
+Author: yonatan shavat <yshavat89@gmail.com>
+Date:   Tue Oct 30 20:28:04 2018 +0200
+
+    create forms.py file in authentication app
+
+[33mcommit 715675b8a9dd2ce8efa52576775581ee55a4499e[m[33m ([m[1;31morigin/master[m[33m, [m[1;31morigin/HEAD[m[33m, [m[1;32mmaster[m[33m)[m
+Author: yonatan shavat <yshavat89@gmail.com>
+Date:   Tue Oct 23 19:04:39 2018 +0300
+
+    fixing static base.html file remove unnecesery
+
+[33mcommit 299cbc4f767f842cf2c458dc69027001ebbc8019[m
+Author: yonatan shavat <yshavat89@gmail.com>
+Date:   Tue Oct 23 19:00:57 2018 +0300
+
+    add DIRS path to template object in settings.py
+
+[33mcommit 357167be3aecaaa5cbc8b1da6a06b93fe534b64b[m
+Author: yonatan shavat <yshavat89@gmail.com>
+Date:   Tue Oct 23 18:59:30 2018 +0300
+
+    changes in login.html and settings.py
+
+[33mcommit efc356eef0965ddadbd9073db3c317f872fce45f[m
+Author: yonatan shavat <yshavat89@gmail.com>
+Date:   Tue Oct 23 06:07:23 2018 +0300
+
+    login page works still in test
+
+[33mcommit b4074ed0cef3058de84919eee0bcd7561eabfefc[m
+Author: yonatan shavat <yshavat89@gmail.com>
+Date:   Tue Oct 23 05:13:23 2018 +0300
+
+    create authentication app urls.py and  also views path
+
+[33mcommit d2340d9f67b5de8a56117210efbcc483879ecea8[m
+Author: yonatan shavat <yshavat89@gmail.com>
+Date:   Tue Oct 23 04:53:13 2018 +0300
+
+    .
+
+[33mcommit a1490f822e099f04d2a81d21ef6060cf032644ed[m
+Author: yonatan shavat <yshavat89@gmail.com>
+Date:   Tue Oct 23 04:52:25 2018 +0300
+
+    configure super user and db work secsesfully
+
+[33mcommit 0f5a7e43cee6528a111cbfca6917324e9fa458e0[m
+Author: yoni.shavat <yshavat89@gmail.com>
+Date:   Tue Oct 23 03:01:37 2018 +0300
+
+    django after first installation works on 127.0.0.1:8000/

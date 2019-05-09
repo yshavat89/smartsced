@@ -13,4 +13,5 @@ class UserCreateForm(forms.ModelForm):
     
     class Meta:
         model = User
-        fields = ['username', 'password','email','group','image','first_name','last_name']  
+        fields = ['username', 'password','email','image','first_name','last_name']  
+#,'group'
