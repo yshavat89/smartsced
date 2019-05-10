@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+
+{% block con1 %}
+{% endblock %}
+
+{% block body1 %}
+<link rel="stylesheet" type="text/css" href="{% static 'treasure/style.css' %}" />
+<h1>tasks</h1>
+    {% if task_list %}
+        <main class="container" role="main">
+            <!--Start Row -->
+            <div class="row">
+                {% for task in task_list %}
+                    <!--Start Col-->
+                    <div class="col-md-4">
+                        <div class="trasure panel panel-default">
+                            <div class="panel-heading">
+                                <h2 class="panel-title">{{ task.name }}</h2>
+                                {{ task.owner }}{{ task.info }}
+
+                            </div>
+                            <embed src="../../../media/{{ task.task_file }}" width="500" height="375">
+                        </div>   
+                    </div>       
+                    <!--End Col-->
+                {% if forloop.counter|divisibleby:3 %}
+                    </div><div class="row">
+                {% endif %}
+                {% endfor %} 
+            </div> 
+            <!--End Row-->  
+        </main>        
+    {% else %}
+        <p>No Treasure are available.</p>
+    {% endif %}
+    <a href="{% url 'authentication:create-task' %}">
+            <div class="col-sm-offset-8 col-sm-10">
+                    <button type="submit" class="btn btn-success">Crerate Treasure</button>
+                </div>
+    </a>   
+{% endblock %}

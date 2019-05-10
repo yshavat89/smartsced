@@ -18,6 +18,8 @@
     <link href="{% static "dist/css/bootstrap.min.css" %}" rel="stylesheet">
     <link href="{% static "navbar-top.css" %} rel="stylesheet">
 {% endblock %}
+{% block appendHeader %}
+{% endblock %}
   </head>
 
 
@@ -25,10 +27,38 @@
 {%block body %}
     {% block nevbar %}
       <nav class="navbar navbar-expand-md navbar-dark bg-dark mb-4">
+          <ul class="navbar-nav mr-auto">
+              <li class="nav-item">
+                  {% if user.is_authenticated %}
+                    <a>{{ user.username }}</a>
+                  {% else %}
+                    <p>Welcome, new user. Please log in.</p>
+                  {% endif %}
+              </li>
+              <li>
+                  {% if user.is_authenticated %}
+                    <img src="{{ user.image.url }}"  style="width:30px;height:30px;"/>
+                  {% endif %}
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link" href="/../admin/">Admin</a>
+              </li>
+              <li>
+                <a class="nav-link" href="{% url 'authentication:login' %}">login</a>
+              </li>
+              <li>
+                <a class="nav-link" href="{% url 'authentication:logoff' %}">logoff</a>
+              </li>
+              <li>
+                <a class="nav-link" href="{% url 'authentication:signup' %}">Sign Up</a>
+              </li>
+              <li>
+                  <a class="nav-link" href="{% url 'authentication:create-task' %}">create-task</a>
+                </li>
+          </ul>
          
       </nav>
     {% endblock %}
-
     {% block con1 %}
     {% endblock %}
     {% block body1 %}

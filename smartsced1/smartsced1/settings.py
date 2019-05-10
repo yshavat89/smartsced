@@ -11,7 +11,7 @@ https://docs.djangoproject.com/en/2.0/ref/settings/
 """
 
 #***************************************
-#   super-user  name : admin , password : Aa123456a , email : yshavat89@gmail.com
+#   super-user  name : yoni.admin , password : Aa123456a , email : yshavat89@gmail.com
 #   mysql name : admin ,password : root
 #   
 #
@@ -33,13 +33,15 @@ SECRET_KEY = 'iw3ezniv&h&dead^jf%j129oickaa+=mhpqarxt6@q6tf4(xs^'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = []# ["192.168.43.206"]
 
 
 # Application definition
 
 INSTALLED_APPS = [
+    'core.apps.CoreConfig',
     'authentication.apps.AuthenticationConfig',
+    'task.apps.TaskConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -116,6 +118,8 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
+# custom User model
+AUTH_USER_MODEL = 'authentication.User'
 
 # Internationalization
 # https://docs.djangoproject.com/en/2.0/topics/i18n/
@@ -134,8 +138,13 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.0/howto/static-files/
 
+#this is the absolute path to the folder that will hold our user uploads. 
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+MEDIA_URL = '/media/'
+
 STATIC_URL = '/static/'
 
 STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, 'static')
+    os.path.join(BASE_DIR, 'static'),
+    os.path.join(BASE_DIR, 'media')
 ]
