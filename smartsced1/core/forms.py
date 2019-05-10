@@ -1,27 +1,30 @@
 from django import forms
+from django.contrib.admin import widgets
 from .models import Tasks, Products, Projects, ProjectInProduct, TaskInProject, Tips
 
 class TasksForm(forms.ModelForm):
     
     def __init__(self, *args, **kwargs):
        super(TasksForm, self).__init__(*args, **kwargs)
-       self.fields['ownerID'].widget.attrs['readonly'] = True
 
     class Meta:
         model = Tasks
-        fields = ['ownerID','summary','tType','risk','name','PRD']
+        fields = ['name','tType','risk','PRD','summary',]
 
 class ProductsForm(forms.ModelForm):
 
     class Meta:
         model = Products
-        fields = ['prodName','ownerID']
+        fields = ['prodName']
 
 class ProjectsForm(forms.ModelForm):
 
+    def __init__(self, *args, **kwargs):
+       super(ProjectsForm, self).__init__(*args, **kwargs)
+       self.fields['startTime'].widget = widgets.AdminSplitDateTime()
     class Meta:
         model = Projects
-        fields = ['ownerID','executorID','projectName','summary','startTime','status','numberOfTasks']
+        fields = ['executorID','projectName','summary','startTime','status','numberOfTasks']
 
 class ProjectInProductForm(forms.ModelForm):
 
@@ -39,5 +42,5 @@ class TipsForm(forms.ModelForm):
 
     class Meta:
         model = Tips
-        fields = ['taskID','ownerID','tipTxt']
+        fields = ['taskID','tipTxt']
 

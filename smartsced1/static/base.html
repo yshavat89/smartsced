@@ -53,8 +53,23 @@
                 <a class="nav-link" href="{% url 'authentication:signup' %}">Sign Up</a>
               </li>
               <li>
-                  <a class="nav-link" href="{% url 'authentication:create-task' %}">create-task</a>
-                </li>
+                  <a class="nav-link" href="{% url 'core:task-add' %}">create task</a>
+              </li>
+              <li>
+                  <a class="nav-link" href="{% url 'core:taskinproject-add' %}">add tasks to project</a>
+              </li>
+              <li>
+                  <a class="nav-link" href="{% url 'core:project-add' %}">create project</a>
+              </li>
+              <li>
+                  <a class="nav-link" href="{% url 'core:tip-add' %}">create tip</a>
+              </li>
+              <li>
+                  <a class="nav-link" href="{% url 'core:projectinproduct-add' %}">add project to product</a>
+              </li>
+              <li>
+                  <a class="nav-link" href="{% url 'core:product-add' %}">create product</a>
+              </li>
           </ul>
          
       </nav>

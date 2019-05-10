@@ -48,25 +48,25 @@
 <div class="container-fluid text-center">    
   <div class="row content">
     <div class="col-sm-2 sidenav">
-	  <a href="https://www.google.com"><div class="row myrow">F</div></a>
-	  <div class="row myrow">G</div>
-	  <div class="row myrow">H</div>
+      <a href="https://www.google.com"><div class="row myrow">F</div></a>
+      <div class="row myrow">G</div>
+      <div class="row myrow">H</div>
 	  
     </div>
     <div class="col-sm-8 text-left"> 
-        <div class="treasure panel panel-default">
-        <div class="panel-heading">
-            <h3 class="panel-title">Add Task</h3>
-        </div>
-        <div class="panel-body">
-            <!--Start form-->
-            <form class="form-horixontal" role="form" action="" method="post" enctype="multipart/form-data">
-                {% csrf_token %}
-                {% include 'Tasks/form_template.html' %}
-                <!--{{form.as_p}}-->
-            </form>
-            <!--End form-->
-        </div>
+        <div class="panel panel-default">
+          <div class="panel-heading">
+              <h3 class="panel-title">Add Task</h3>
+          </div>
+          <div class="panel-body">
+              <!--Start form-->
+              <form class="form-horixontal" role="form" action="" method="post" enctype="multipart/form-data">
+                  {% csrf_token %}
+                  {% include 'Tasks/form_template.html' %}
+                  <!--{{form.as_p}}-->
+              </form>
+              <!--End form-->
+          </div>
         </div>
         <!--End panel-->
     </div>
@@ -83,4 +83,5 @@
     </div>
   </div>
 </div>
+
 {% endblock %}

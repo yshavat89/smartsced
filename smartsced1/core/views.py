@@ -26,8 +26,14 @@ class CreateTasksView(LoginRequiredMixin, View):
     def post(self, request):
         form = self.form_class(data=request.POST,files=request.FILES)
         if form.is_valid():
-            form.save(commit=True)
+            task = form.save(commit=False)
+            task.ownerID = request.user
+            task.save()
         return redirect('core:task-add')
+    
+    def sample_view(request):
+        current_user = request.user
+        print(current_user.id)
 
 class CreateTaskInProjectView(LoginRequiredMixin, View):
     # login_url this values handele auth and redirects if user is not logs in 
@@ -72,7 +78,9 @@ class CreateProjectsView(LoginRequiredMixin, View):
         form = self.form_class(data=request.POST)
 
         if form.is_valid():
-            form.save(commit=True)
+            project = form.save(commit=False)
+            project.ownerID = request.user
+            project.save()
         return render(request, 'Projects/index.html')
 
 class CreateTipsView(LoginRequiredMixin, View):
@@ -94,9 +102,11 @@ class CreateTipsView(LoginRequiredMixin, View):
     # process from data
     def post(self, request):
         form = self.form_class(data=request.POST,files=request.FILES)
-
+            
         if form.is_valid():
-            form.save(commit=True)
+            tip = form.save(commit=False)
+            tip.ownerID = request.user
+            tip.save()
         return render(request, 'Tips/index.html')
 
 class CreateProjectInProductView(LoginRequiredMixin, View):
