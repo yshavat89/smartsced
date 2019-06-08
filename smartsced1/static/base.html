@@ -47,7 +47,7 @@
                 <a class="nav-link" href="{% url 'authentication:login' %}">login</a>
               </li>
               <li>
-                <a class="nav-link" href="{% url 'authentication:logoff' %}">logoff</a>
+                <a class="nav-link" href="{% url 'authentication:logoff' %}">log-out</a>
               </li>
               <li>
                 <a class="nav-link" href="{% url 'authentication:signup' %}">Sign Up</a>
@@ -69,6 +69,19 @@
               </li>
               <li>
                   <a class="nav-link" href="{% url 'core:product-add' %}">create product</a>
+              </li>
+              <li>
+                <div class="dropdown">
+                  <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Dropdown title
+                  </button>
+                  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                    <a class="dropdown-item" href="{% url 'core:product-add' %}">create product</a>
+                    <a class="dropdown-item" href="{% url 'core:projectinproduct-add' %}">create tip</a>
+                    <a class="dropdown-item" href="{% url 'core:projectinproduct-add' %}">add project to product</a>
+                  </div>
+                </div>
+
               </li>
           </ul>
          

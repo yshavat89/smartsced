@@ -19,8 +19,10 @@ class CreateTasksView(LoginRequiredMixin, View):
     # display blank form
     def get(self, request):
         form = self.form_class({'ownerID':request.user},None)
-        model = get_list_or_404(Tasks)
-        return render(request, self.template_name, {'form': form, 'detail_list':model})
+        task_objects = get_list_or_404(Tasks)
+        project_objects = get_list_or_404(Projects)
+
+        return render(request, self.template_name, {'form': form, 'task_list':task_objects, 'project_list': project_objects})
 
     # process from data
     def post(self, request):
@@ -75,7 +77,7 @@ class CreateProjectsView(LoginRequiredMixin, View):
 
     # process from data
     def post(self, request):
-        form = self.form_class(data=request.POST)
+        form = self.form_class(data=request.POST,files=request.FILES)
 
         if form.is_valid():
             project = form.save(commit=False)
