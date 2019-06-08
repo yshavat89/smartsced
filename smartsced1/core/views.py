@@ -155,9 +155,10 @@ class CreateProductsView(LoginRequiredMixin, View):
         form = self.form_class(data=request.POST)
 
         if form.is_valid():
-            form.save(commit=True)
+            product = form.save(commit=False)
+            product.ownerID = request.user
+            product.save()
         return render(request, 'Products/index.html')
-
 
 class CreateTasks2View(LoginRequiredMixin, View):
     # login_url this values handele auth and redirects if user is not logs in 
