@@ -32,10 +32,7 @@ class CreateTasksView(LoginRequiredMixin, View):
             task.ownerID = request.user
             task.save()
         return redirect('core:task-add')
-    
-    def sample_view(request):
-        current_user = request.user
-        print(current_user.id)
+
 
 class CreateTaskInProjectView(LoginRequiredMixin, View):
     # login_url this values handele auth and redirects if user is not logs in 

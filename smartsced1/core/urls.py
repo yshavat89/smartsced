@@ -10,4 +10,5 @@ urlpatterns = [
     path('tip/add', views.CreateTipsView.as_view(), name='tip-add'),
     path('projectinproduct/add', views.CreateProjectInProductView.as_view(), name='projectinproduct-add'),
     path('product/add', views.CreateProductsView.as_view(), name='product-add'),
+    path('<int:pk>/tasks/',views.GetAllUserTasks.as_view(),name='all-user-tasks'),
 ]
