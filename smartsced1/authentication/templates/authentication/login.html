@@ -38,11 +38,18 @@ body {
   border-top-left-radius: 0;
   border-top-right-radius: 0;
 }
+.form-signin
+{
+  background-color: #FFFFF0;
+  padding-left: 30px;
+  padding-right: 30px;
+  padding-bottom: 40px;
+}
 </style>
 {% endblock %}
 {% block body1 %}
 <div class="text-center">
-<form class="form-signin" role="form" action="" method="post">
+<form class="form-signin rounded" role="form" action="" method="post">
     {% csrf_token %}
     <img class="mb-4" src="../../assets/brand/bootstrap-solid.svg" alt="" width="72" height="72">
     <h1 class="h3 mb-3 font-weight-normal">Please sign in</h1>
@@ -60,3 +67,14 @@ body {
   </form>
 </div>
 {% endblock %}
+
+
+<div class="jumbotron">
+  <h1 class="display-4">Hello, world!</h1>
+  <p class="lead">This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>
+  <hr class="my-4">
+  <p>It uses utility classes for typography and spacing to space content out within the larger container.</p>
+  <p class="lead">
+    <a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a>
+  </p>
+</div>

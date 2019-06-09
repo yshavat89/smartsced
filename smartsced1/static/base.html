@@ -21,15 +21,25 @@
     <!--
       
       <link href="{% static "base.css" %} rel="stylesheet">
+      
+       style='background-image: url("{% static "backgrounds/network-black.png" %}");'
       -->
 {% endblock %}
 
 {% block appendHeader %}
+
 {% endblock %}
+<style>
+body {
+  background: url('{% static "backgrounds/network-black.png" %}');
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+</style>
   </head>
 
 
-  <body style='background-image: url("{% static "backgrounds/network-black.png" %}");'>
+  <body>
 {%block body %}
     {% block nevbar %}
       <nav class="navbar navbar-expand-md navbar-dark bg-dark mb-4">
@@ -57,13 +67,13 @@
                   <a href="{% url 'authentication:logoff' %}" class="nav-link btn btn-dark btn-lg"><span class="glyphicon glyphicon-off"></span></a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="/../admin/"><span class="glyphicon glyphicon-cog"></span></a>
+                  <a href="/../admin/" class="nav-link btn btn-dark btn-lg" ><span class="glyphicon glyphicon-cog"></span></a>
                 </li>
               
 
               <li class="pr-3">
                    <div class="dropdown">
-                  <button class="btn btn-dark dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  <button class="btn btn-dark btn-lg dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     Manager
                   </button>
                   <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
@@ -80,7 +90,7 @@
               </li>
               <li class="pr-3">
                    <div class="dropdown">
-                  <button class="btn btn-dark dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  <button class="btn btn-dark btn-lg dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     Editor
                   </button>
                   <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
@@ -97,7 +107,7 @@
               </li>
               <li>
                 <div class="dropdown">
-                  <button class="btn btn-dark dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  <button class="btn btn-dark btn-lg dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     Worker
                   </button>
                   <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
