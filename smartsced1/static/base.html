@@ -1,5 +1,6 @@
 {% load static %}
 
+
 <!doctype html>
 <html lang="en">
 
@@ -9,22 +10,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="">
-    <link rel="icon" href="../../../../favicon.ico">
+    <!--<link rel="icon" href="../../../../favicon.ico">-->
 
     <!--<title>{% block title %}Top navbar example for Bootstrap{% endblock %}</title>-->
-    <title>Top navbar example for Bootstrap</title>
+    <title>Smart-sced</title>
 
     <!-- Bootstrap core CSS -->
     <link href="{% static "dist/css/glyphicon.css" %}" rel="stylesheet">
     <link href="{% static "dist/css/bootstrap.min.css" %}" rel="stylesheet">
-    <link href="{% static "navbar-top.css" %} rel="stylesheet">
+    <!--
+      
+      <link href="{% static "base.css" %} rel="stylesheet">
+      -->
 {% endblock %}
+
 {% block appendHeader %}
 {% endblock %}
   </head>
 
 
-  <body>
+  <body style='background-image: url("{% static "backgrounds/network-black.png" %}");'>
 {%block body %}
     {% block nevbar %}
       <nav class="navbar navbar-expand-md navbar-dark bg-dark mb-4">
@@ -42,9 +47,11 @@
                 </li>
               {% endif %}
               {% if user.is_authenticated %}
-                <li>
-                    <img src="{{ user.image.url }}"  style="width:30px;height:30px;"/><br/>
-                    <p class="text-light bg-dark">{{ user.username }}</p>
+                <li class="pr-3">
+                    <img src="{{ user.image.url }}"  style="width:30px;height:30px;"/>
+                </li>
+                <li class="pr-3">
+                    <p class="text-light bg-dark"><span class="align-middle">{{ user.username }}</span></p>
                 </li>
                 <li>
                   <a href="{% url 'authentication:logoff' %}" class="nav-link btn btn-dark btn-lg"><span class="glyphicon glyphicon-off"></span></a>
@@ -56,18 +63,15 @@
 
               <li class="pr-3">
                    <div class="dropdown">
-                  <button class="btn-dark dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  <button class="btn btn-dark dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     Manager
                   </button>
                   <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                     <a class="dropdown-item" href="{% url 'core:product-add' %}">create product</a>
-                    <a class="dropdown-item" href="{% url 'core:projectinproduct-add' %}">create tip</a>
                     <a class="dropdown-item" href="{% url 'core:projectinproduct-add' %}">add project to product</a>
                     <a class="dropdown-item" href="{% url 'core:product-add' %}">create product</a>
-                    <a class="dropdown-item" href="{% url 'core:projectinproduct-add' %}">add project to product</a>
                     <a class="dropdown-item" href="{% url 'core:tip-add' %}">create tip</a>
                     <a class="dropdown-item" href="{% url 'core:project-add' %}">create project</a>
-                    <a class="dropdown-item" href="{% url 'core:taskinproject-add' %}">add tasks to project</a>
                     <a class="dropdown-item" href="{% url 'core:taskinproject-add' %}">add tasks to project</a>
                     <a class="dropdown-item" href="{% url 'core:task-add' %}">create task</a>
                     
@@ -81,13 +85,10 @@
                   </button>
                   <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                     <a class="dropdown-item" href="{% url 'core:product-add' %}">create product</a>
-                    <a class="dropdown-item" href="{% url 'core:projectinproduct-add' %}">create tip</a>
                     <a class="dropdown-item" href="{% url 'core:projectinproduct-add' %}">add project to product</a>
                     <a class="dropdown-item" href="{% url 'core:product-add' %}">create product</a>
-                    <a class="dropdown-item" href="{% url 'core:projectinproduct-add' %}">add project to product</a>
                     <a class="dropdown-item" href="{% url 'core:tip-add' %}">create tip</a>
                     <a class="dropdown-item" href="{% url 'core:project-add' %}">create project</a>
-                    <a class="dropdown-item" href="{% url 'core:taskinproject-add' %}">add tasks to project</a>
                     <a class="dropdown-item" href="{% url 'core:taskinproject-add' %}">add tasks to project</a>
                     <a class="dropdown-item" href="{% url 'core:task-add' %}">create task</a>
                     
@@ -101,13 +102,10 @@
                   </button>
                   <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                     <a class="dropdown-item" href="{% url 'core:product-add' %}">create product<span class="pl-5 ml glyphicon glyphicon-plus-sign"></span></a>
-                    <a class="dropdown-item" href="{% url 'core:projectinproduct-add' %}">create tip<span class="pl-5 ml glyphicon glyphicon-plus"></span></a>
-                    <a class="dropdown-item" href="{% url 'core:projectinproduct-add' %}">add project to product</a>
+                    <a class="dropdown-item" href="{% url 'core:projectinproduct-add' %}">add project to product<span class="pl-5 ml glyphicon glyphicon-plus"></span></a>
                     <a class="dropdown-item" href="{% url 'core:product-add' %}">create product</a>
-                    <a class="dropdown-item" href="{% url 'core:projectinproduct-add' %}">add project to product</a>
                     <a class="dropdown-item" href="{% url 'core:tip-add' %}">create tip</a>
                     <a class="dropdown-item" href="{% url 'core:project-add' %}">create project</a>
-                    <a class="dropdown-item" href="{% url 'core:taskinproject-add' %}">add tasks to project</a>
                     <a class="dropdown-item" href="{% url 'core:taskinproject-add' %}">add tasks to project</a>
                     <a class="dropdown-item" href="{% url 'core:task-add' %}">create task</a>
                     
