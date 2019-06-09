@@ -32,7 +32,10 @@ class CreateTasksView(LoginRequiredMixin, View):
             task.ownerID = request.user
             task.save()
         return redirect('core:task-add')
-
+    
+    def sample_view(request):
+        current_user = request.user
+        print(current_user.id)
 
 class CreateTaskInProjectView(LoginRequiredMixin, View):
     # login_url this values handele auth and redirects if user is not logs in 
@@ -56,6 +59,19 @@ class CreateTaskInProjectView(LoginRequiredMixin, View):
         if form.is_valid():
             form.save(commit=True)
         return render(request, 'TaskInProject/index.html')
+
+class GetAllUserTasks(LoginRequiredMixin,View):
+    login_url = '/'
+    redirect_field_name = 'redirect_to'
+
+    # View
+    form_class = Tasks
+    template_name = 'Tasks/allusertasks.html'
+
+    # display blank form
+    def get(self, request,user_id):
+        form = self.form_class(None)
+        return render(request, self.template_name, {'form': form, })
 
 class CreateProjectsView(LoginRequiredMixin, View):
     # login_url this values handele auth and redirects if user is not logs in 
